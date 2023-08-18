@@ -9,11 +9,10 @@ from himawari import HimawariSatellite
 
 def default(output_path):
     utc_hour = datetime.utcnow().hour
-    if utc_hour > 2 and utc_hour < 10:
+    if utc_hour > 21 or utc_hour < 12:
         url = HimawariSatellite().get_image_url()
-        download_file(url, output_path, (832, 852, 832+3840, 852+2160))
+        download_file(url, output_path, (832, 852, 832 + 3840, 852 + 2160))
     else:
         url = GoesSatellite().get_image_url()
         download_file(url, output_path, (0, 200, 9216, 5384))
     logging.info(f'Done!')
-
