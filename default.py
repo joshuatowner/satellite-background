@@ -15,4 +15,3 @@ def default(output_path):
     else:
         url = GoesSatellite().get_image_url()
         download_file(url, output_path, (0, 200, 9216, 5384))
-    logging.info(f'Done!')

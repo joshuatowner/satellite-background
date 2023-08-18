@@ -7,7 +7,7 @@ from PIL import Image
 
 
 def crop(file, dimensions):
-    logging.info(f'cropping {file} to {dimensions}')
+    logging.info(f'Cropping {file} to {dimensions}')
     im = Image.open(file)
     im1 = im.crop(dimensions)
     im1.save(file)
